@@ -1,0 +1,267 @@
+//User Register
+URL: http://localhost:3000/register
+Request Type: POST
+Request Parameter:
+{
+    "name":"Rahul Sharma",
+    "email":"rahul@gmail.com",
+    "password":"12345",
+    "mobile":7899876543,
+    "city":"Indore",
+    "address":"Indore M.P",
+    "gender":"Male"
+}
+Response:
+{
+    "msg": "User Register Successfully!!!!",
+    "record": {
+        "_id": 1,
+        "name": "rahul sharma",
+        "email": "rahul@gmail.com",
+        "password": "12345",
+        "mobile": "7899876543",
+        "city": "Indore",
+        "address": "Indore M.P",
+        "gender": "Male",
+        "role": "user",
+        "status": 0,
+        "info": "Sat Jul 01 2023 15:38:23 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+-----------------------------------------------------------------
+//Get All Users
+URL:http://localhost:3000/admin/getallusers
+Request Type:GET 
+Response:
+[
+    {
+        "_id": 1,
+        "name": "mohan sharma",
+        "email": "mohan@gmail.com",
+        "password": "12345",
+        "profileimage": "http://localhost:3000/uploads/1688379537189_user.png",
+        "mobile": "8987876541",
+        "city": "Indore",
+        "address": "Indore M.P",
+        "gender": "Male",
+        "role": "user",
+        "status": 0,
+        "info": "Mon Jul 03 2023 15:48:57 GMT+0530 (India Standard Time)",
+        "__v": 0
+    },
+    {
+        "_id": 2,
+        "name": "neha sharma",
+        "email": "neha@gmail.com",
+        "password": "12345",
+        "profileimage": "http://localhost:3000/uploads/1688465687415_user1.jpeg",
+        "mobile": "8987876544",
+        "city": "Bhopal",
+        "address": "Bhopal M.P",
+        "gender": "Female",
+        "role": "user",
+        "status": 0,
+        "info": "Tue Jul 04 2023 15:44:47 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+]
+-----------------------------------
+//User Login
+
+Note:Visitor
+URL:http://localhost:3000/login
+Request Type:POST 
+Request Body:
+{
+    "email":"adsfs@gmail.com",
+    "password":"12345"
+}
+Response:
+{
+    "msg": "Invalid User or Verfiy User ,Please try again"
+}
+---------
+Note:Register User
+URL:http://localhost:3000/login
+Request Type:POST 
+Request Body:
+{
+    "email":"mohan@gmail.com",
+    "password":"12345"
+}
+Response:
+{
+    "msg": "User Login Successfully!!!",
+    "userDetails": {
+        "responseCode": 2,
+        "userdetails": {
+            "_id": 1,
+            "name": "mohan sharma",
+            "email": "mohan@gmail.com",
+            "password": "12345",
+            "profileimage": "http://localhost:3000/uploads/1688379537189_user.png",
+            "mobile": "8987876541",
+            "city": "Indore",
+            "address": "Indore M.P",
+            "gender": "Male",
+            "role": "user",
+            "status": 1,
+            "info": "Mon Jul 03 2023 15:48:57 GMT+0530 (India Standard Time)",
+            "__v": 0
+        }
+    }
+}
+--------
+Note:Admin
+URL:http://localhost:3000/login
+Request Type:POST 
+Request Body:
+{
+    "email":"admin@gmail.com",
+    "password":"12345"
+}
+Response:
+{
+    "msg": "Admin Login Successfully!!!",
+    "adminDetails": {
+        "responseCode": 1,
+        "userdetails": {
+            "_id": 3,
+            "name": "admin",
+            "email": "admin@gmail.com",
+            "password": "12345",
+            "profileimage": "http://localhost:3000/uploads/1688550788473_user.jpg",
+            "mobile": "8987876566",
+            "city": "Mumbai",
+            "address": "Mumbai Maharastra",
+            "gender": "Male",
+            "role": "admin",
+            "status": 1,
+            "info": "Wed Jul 05 2023 15:23:08 GMT+0530 (India Standard Time)",
+            "__v": 0
+        }
+    }
+}
+--------------
+Status 
+URL:http://localhost:3000/admin/manageuserstatus?s=verify&regId=2
+Request Type:GET 
+Response:
+{
+    "_id": 2,
+    "name": "neha sharma",
+    "email": "neha@gmail.com",
+    "password": "12345",
+    "profileimage": "http://localhost:3000/uploads/1688465687415_user1.jpeg",
+    "mobile": "8987876544",
+    "city": "Bhopal",
+    "address": "Bhopal M.P",
+    "gender": "Female",
+    "role": "user",
+    "status": 1,
+    "info": "Tue Jul 04 2023 15:44:47 GMT+0530 (India Standard Time)",
+    "__v": 0
+}
+----------
+URL:http://localhost:3000/admin/manageuserstatus?s=block&regId=2
+Request Type:GET
+Response:
+{
+    "_id": 2,
+    "name": "neha sharma",
+    "email": "neha@gmail.com",
+    "password": "12345",
+    "profileimage": "http://localhost:3000/uploads/1688465687415_user1.jpeg",
+    "mobile": "8987876544",
+    "city": "Bhopal",
+    "address": "Bhopal M.P",
+    "gender": "Female",
+    "role": "user",
+    "status": 0,
+    "info": "Tue Jul 04 2023 15:44:47 GMT+0530 (India Standard Time)",
+    "__v": 0
+} 
+------------
+//Delete User 
+URL:http://localhost:3000/admin/manageuserstatus?s=delete&regId=2
+Request Type:GET
+Response:
+{
+    "msg": "Record Deleted Successfully!!"
+}
+
+---------------
+//User Profile Update 
+URL:http://localhost:3000/users/updateuser
+Request Type:PUT
+Request Body:
+{
+    "name":"mohan verma",
+    "email":"mohan@gmail.com",
+    "password":"12345",
+    "profileimage":"unsplash-photo-1.jpg",
+    "mobile":8987876578,
+    "city":"Ujjain",
+    "address":"Ujjain M.P",
+    "gender":"Male"
+}
+Response:
+{
+    "msg": "User Profile Updated Successfully!!!!",
+    "record": {
+        "_id": 1,
+        "name": "mohan verma",
+        "email": "mohan@gmail.com",
+        "password": "12345",
+        "profileimage": "http://localhost:3000/uploads/1688725200855_unsplash-photo-1.jpg",
+        "mobile": "8987876578",
+        "city": "Ujjain",
+        "address": "Ujjain M.P",
+        "gender": "Male",
+        "role": "user",
+        "status": 1,
+        "info": "Mon Jul 03 2023 15:48:57 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+------
+//add category
+URL:http://localhost:3000/admin/addcategory
+Request Type:POST 
+Request Body:
+{
+    "catname":"hotel",
+    "caticonname":"hotel.jpg"
+}
+Response:
+{
+    "msg": "Category Added Successfully!!!",
+    "category": {
+        "_id": 1,
+        "catname": "hotel",
+        "caticonname": "http://localhost:3000/category/1688810513678_hotel.jpg",
+        "__v": 0
+    }
+}
+----
+//add sub category 
+URL:http://localhost:3000/admin/addcategory
+Request Type:POST 
+Request Body:
+{
+    "catname":"hotel",
+    "subcatname":"fortune landmark , five star hotel",
+    "subcaticonname":"house.jpg"
+}
+Response:
+{
+    "msg": "Sub Category Added Successfully!!!",
+    "category": {
+        "_id": 1,
+        "catname": "hotel",
+        "subcatname": "fortune landmark , five star hotel",
+        "subcaticonname": "http://localhost:3000/subcategory/1688811276487_house.jpg",
+        "__v": 0
+    }
+}
