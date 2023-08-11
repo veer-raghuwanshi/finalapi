@@ -3,6 +3,15 @@ var multer = require('multer')
 Returns a StorageEngine implementation configured to store files on the local file system.
 A string or function may be specified to determine the destination directory, and a function to determine filenames. If no options are set, files will be stored in the system's temporary directory with random 32 character filenames.
 */
+// const cloudinary = require("cloudinary");
+
+
+// cloudinary.config({ 
+//     cloud_name: 'dswgbx3nn', 
+//     api_key: '624238566144382', 
+//     api_secret: 'M8Qum0g95qAHT-6p_8D82rYtcYI' 
+//   });
+
 var storage_engine = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './uploads')
