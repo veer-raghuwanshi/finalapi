@@ -3,6 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cloudinary = require('cloudinary')
+
+cloudinary.config({ 
+  cloud_name: 'dswgbx3nn', 
+  api_key: '624238566144382', 
+  api_secret: 'M8Qum0g95qAHT-6p_8D82rYtcYI' 
+});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
