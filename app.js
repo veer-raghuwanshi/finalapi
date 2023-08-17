@@ -8,7 +8,9 @@ var cloudinary = require('cloudinary')
 cloudinary.config({ 
   cloud_name: 'dswgbx3nn', 
   api_key: '624238566144382', 
-  api_secret: 'M8Qum0g95qAHT-6p_8D82rYtcYI' 
+  api_secret: 'M8Qum0g95qAHT-6p_8D82rYtcYI',
+    secure: true
+
 });
 
 var indexRouter = require('./routes/index');
