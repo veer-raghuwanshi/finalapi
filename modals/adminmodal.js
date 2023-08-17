@@ -67,8 +67,7 @@ function adminmodal() {
                     .catch((error) => {
                         reject(error)
                     })
-            } 
-            else if (urlObj.query.s == "delete") {
+            } else if (urlObj.query.s == "delete") {
                 registerschemamodel.findByIdAndDelete(parseInt(urlObj.query.regId), {
                     new: true,
                     useFindAndModify: false

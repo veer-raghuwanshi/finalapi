@@ -14,7 +14,7 @@ function usercontroller(){
                         break
                     }    
                 }
-                userdetails = {...userdetails,_id:gId,status:1,role:'user',info:Date(),profileimage:"http://localhost:3000/"+imgpath}
+                userdetails = {...userdetails,_id:gId,status:1,role:'user',info:Date(),profileimage:imgpath}
                 usermodal.userupdatemodal(userdetails)
                 .then((result)=>{
                     resolve(result)

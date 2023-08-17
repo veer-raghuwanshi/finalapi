@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /*
 configuration for image upload
 */
-app.use('/uploads',express.static('uploads'));
+// app.use('/uploads',express.static('uploads'));
 app.use('/category',express.static('category'));
 app.use('/subcategory',express.static('subcategory'));
 
