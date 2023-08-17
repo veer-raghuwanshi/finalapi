@@ -13,8 +13,7 @@ function indexcontroller() {
                         status: 0,
                         role: "user",
                         info: Date(),
-                        profileimage: imgpath
-                        // "https://finalapi-api.onrender.com/" +
+                        profileimage:  imgpath
                     }
                     indexmodel.userregistermodal(userdetails)
                         .then((result) => {
